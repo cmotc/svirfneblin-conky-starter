@@ -1,0 +1,72 @@
+background no
+font Ubuntu:bold:size=11
+use_xft yes
+xftalpha 0.9
+update_interval 3.0
+total_run_times 0
+own_window yes
+own_window_type normal
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 180 5
+maximum_width 180
+draw_shades yes
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+default_color cccccc
+default_shade_color black
+default_outline_color green
+alignment top_right
+gap_x 12
+gap_y 35
+no_buffers yes
+uppercase no
+cpu_avg_samples 4
+override_utf8_locale no
+uppercase no
+
+TEXT
+
+CPU: ${alignr}${freq} MHz
+
+Core 1 ${alignr}${cpu cpu1}%
+${cpubar 4 cpu1}
+Core 2 ${alignr}${cpu cpu2}%
+${cpubar 4 cpu2}
+Core 3 ${alignr}${cpu cpu2}%
+${cpubar 4 cpu3}
+Core 4 ${alignr}${cpu cpu2}%
+${cpubar 4 cpu4}
+${top name 1}$alignr${top cpu 1}
+${top name 2}$alignr${top cpu 2}
+${top name 3}$alignr${top cpu 3}
+${top name 4}$alignr${top cpu 4}
+${top name 5}$alignr${top cpu 5}
+
+RAM: ${alignr}$memmax
+
+Active: ${alignr}$mem ($memperc%)
+${membar 4}
+${top_mem name 1}$alignr${top_mem mem 1}
+${top_mem name 2}$alignr${top_mem mem 2}
+${top_mem name 3}$alignr${top_mem mem 3}
+${top_mem name 4}$alignr${top_mem mem 4}
+${top_mem name 5}$alignr${top_mem mem 5}
+
+Filesystem
+
+Root: ${alignr}${fs_used /} / ${fs_size /}
+${fs_bar 4 /}
+Home: ${alignr}${fs_used /home} / ${fs_size /home}
+${fs_bar 4 /home}
+Amp: ${alignr}${fs_used /Ampersand} / ${fs_size /Ampersand}
+${fs_bar 4 /Ampersand}
+
+Network: ${alignr}(${addr wlan0})
+
+Down: ${downspeed wlan0}/s ${alignr}(${totaldown wlan0})
+${downspeedgraph wlan0 000000 775555}
+Up: ${upspeed wlan0}/s ${alignr}(${totalup wlan0})
+${upspeedgraph wlan0 000000 557755}$color
