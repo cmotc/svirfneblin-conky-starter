@@ -27,6 +27,8 @@ pwd
 # Create the packaging skeleton (debian/*)
 dh_make -s --indep --createorig 
 
+mkdir -p debian/tmp
+
 cp -R usr debian/tmp/usr
 cp -R etc debian/tmp/etc
 
