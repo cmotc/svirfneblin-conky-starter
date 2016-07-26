@@ -26,25 +26,22 @@ cd $DEBFOLDERNAME
 pwd
 
 # Create the packaging skeleton (debian/*)
-dh_make -s --indep --createorig 
+dh_make --indep --createorig
 
-<<<<<<< HEAD
-mkdir -p debian/tmp/
-=======
+
 mkdir -p debian/tmp
 
->>>>>>> 98e14f5e9ba8e27de474fab286d69860942493ce
 cp -R usr debian/tmp/usr
 cp -R etc debian/tmp/etc
 
 # Remove make calls
-grep -v makefile debian/rules > debian/rules.new 
-mv debian/rules.new debian/rules 
+grep -v makefile debian/rules > debian/rules.new
+mv debian/rules.new debian/rules
 
-# debian/install must contain the list of scripts to install 
+# debian/install must contain the list of scripts to install
 # as well as the target directory
-echo usr/bin/$SOURCEBIN usr/bin > debian/install 
-echo etc/conkyrc etc >> debian/install 
+echo usr/bin/$SOURCEBIN usr/bin > debian/install
+echo etc/conkyrc etc >> debian/install
 echo etc/xdg/svirfneblin/rc.lua.conky.example etc/xdg/svirfneblin >> debian/install
 echo etc/xdg/svirfneblin/debian/menu.lua etc/xdg/svirfneblin/debian/ >> debian/install
 echo usr/share/doc/$DEBFOLDER/$SOURCEDOC usr/share/doc/$DEBFOLDER >> debian/install
